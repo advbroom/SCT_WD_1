@@ -1,0 +1,112 @@
+/* Reset and Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  /* Fixed Navbar */
+  #navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+    z-index: 1000;
+    background-color: transparent;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Scroll effect */
+  #navbar.scrolled {
+    background-color: #111;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Navbar Layout */
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    padding: 8px 0;
+    transition: all 0.3s ease;
+  }
+  
+  /* Hover effect */
+  .nav-links a:hover {
+    color: #00ffc8;
+    transform: scale(1.1);
+  }
+  
+  .nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: #00ffc8;
+    transition: 0.4s ease;
+  }
+  
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+  
+  /* HERO SECTION */
+  .hero {
+    height: 100vh;
+    background: linear-gradient(to right, #1e3c72, #2a5298);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  /* CONTENT */
+  .content {
+    background: #f7f7f7;
+    padding: 4rem 2rem;
+    color: #333;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .nav-links {
+      flex-direction: column;
+      background: #222;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      width: 100%;
+      display: none;
+    }
+  
+    nav:hover .nav-links {
+      display: flex;
+    }
+  }
+  
